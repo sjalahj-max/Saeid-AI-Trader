@@ -277,7 +277,4 @@ token(TOKEN).build()
     app.run_polling()
 
 if name == "__main__":
-
-    asyncio.set_event_loop(asyncio.new_event_loop())
-
-    main()
+  main()
