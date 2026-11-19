@@ -1,4 +1,5 @@
-import os import json import urllib.request import logging from telegram import Update from telegram.ext import ( Application, CommandHandler, ContextTypes )
+import asyncio
+asyncio.set_event_loop(asyncio.new_event_loop())import os import json import urllib.request import logging from telegram import Update from telegram.ext import ( Application, CommandHandler, ContextTypes )
 logging.basicConfig(level=logging.INFO)
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 def get_market_data(symbol="BTCUSDT"): url = ( "https://api.binance.com/api/v3/klines" f"?symbol={symbol}&interval=15m&limit=100" )
